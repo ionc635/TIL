@@ -2,7 +2,7 @@
 
 ### 1. Eviroments의 VARIABLE에 변수명 설정
 
-![image1](Ehttps://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F389b131c-22c0-404d-87dd-2a8c2389d3dc%2FUntitled.png?table=block&id=f5dde576-c227-4369-8165-4e9230f20ebc&spaceId=16f39aaf-0317-4c98-9def-554c19109c98&width=2000&userId=d99aa862-99f3-418c-9da1-b86737bc5ec8&cache=v2)
+![image1](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F389b131c-22c0-404d-87dd-2a8c2389d3dc%2FUntitled.png?table=block&id=f5dde576-c227-4369-8165-4e9230f20ebc&spaceId=16f39aaf-0317-4c98-9def-554c19109c98&width=2000&userId=d99aa862-99f3-418c-9da1-b86737bc5ec8&cache=v2)
 
 app-token으로 변수명을 설정했다. 변수명은 임의로 작성해도 좋다.
 
@@ -22,7 +22,7 @@ Enviroments에 들어가면 app-token 변수의 CURRENT VALUE로 Token 값이 �
 
 ### 3. Token이 필요한 API에 변수명 삽입
 
-![image5]](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Ff0dc25f7-10d1-424a-83cd-578ab3219bbc%2FUntitled.png?table=block&id=5d3eaced-03be-4758-9a3d-1147a0a2e232&spaceId=16f39aaf-0317-4c98-9def-554c19109c98&width=2000&userId=d99aa862-99f3-418c-9da1-b86737bc5ec8&cache=v2)
+![image5](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Ff0dc25f7-10d1-424a-83cd-578ab3219bbc%2FUntitled.png?table=block&id=5d3eaced-03be-4758-9a3d-1147a0a2e232&spaceId=16f39aaf-0317-4c98-9def-554c19109c98&width=2000&userId=d99aa862-99f3-418c-9da1-b86737bc5ec8&cache=v2)
 
 Authorization의 Token에 해당 변수를 설정했다. {{app-token}} 형태로 사용하면 된다.
 
