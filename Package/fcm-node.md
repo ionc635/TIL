@@ -99,15 +99,14 @@ export class FcmService {
       notification: {
         title: data.title,
         body: data.body,
-        click_action: "Result3Activity",
       },
       data,
     };
   }
 
-  public sendNotice(to: string, data: Data) {
+  public sendNoticeAndroid(to: string, data: Data) {
     this.fcm.send(
-      this.message(to, data, "com.jaryapp.myapplication3"),
+      this.message(to, data, "collapse_key"),
       (err, res) => {
         if (err) {
           console.log(err);
@@ -120,7 +119,7 @@ export class FcmService {
   }
 
   public sendNoticeIos(to: string, data: Data) {
-    this.fcm.send(this.message(to, data, "com.cmi.cbnu-alrami"), (err, res) => {
+    this.fcm.send(this.message(to, data, "collapse_key"), (err, res) => {
       if (err) {
         console.log(err);
         console.log("Something has gone wrong!");
