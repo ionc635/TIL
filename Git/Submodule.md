@@ -40,9 +40,9 @@ git status # 상태 확인
 git commit # 커밋
 ```
 
-![image1](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F0b16d973-de20-4eb9-98dc-b9f6c022281d%2FUntitled.png?table=block&id=3d878c91-a867-4f9b-82fd-95f82ff345b9&spaceId=7d178d96-0f2c-4d99-8d7c-45769decd3ac&width=2000&userId=6c357645-baf8-4fa7-ad44-d15aa39b16c7&cache=v2)
+![image](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/0b16d973-de20-4eb9-98dc-b9f6c022281d/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220413%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220413T151024Z&X-Amz-Expires=86400&X-Amz-Signature=e410894624bb1428ee7def5b80416290bd7bffc8e9307127d73e88094eb98b36&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22&x-id=GetObject)
 
-![image2](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F47dee8ff-285e-45b9-abe2-eb09e8140fb5%2FUntitled.png?table=block&id=0ff13185-458a-423b-b854-9e80c4fca30d&spaceId=7d178d96-0f2c-4d99-8d7c-45769decd3ac&width=2000&userId=6c357645-baf8-4fa7-ad44-d15aa39b16c7&cache=v2)
+![image2](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/47dee8ff-285e-45b9-abe2-eb09e8140fb5/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220413%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220413T151126Z&X-Amz-Expires=86400&X-Amz-Signature=5e726cf94613a13ba9f250db754edb2be0dbf3f23413db7e5ad7622015cfb120&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22&x-id=GetObject)
 
 `커밋`할 때 `create mode 160000 [서브모듈 디렉토리]` `메세지`가 나온다. 160000은 이 `submodule`을 다른 `디렉토리`와 다르게 취급한다는 의미이다.
 
