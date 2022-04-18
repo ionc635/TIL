@@ -104,31 +104,18 @@ export class FcmService {
     };
   }
 
-  public sendNoticeAndroid(to: string, data: Data) {
+  public sendMessage(to: string, data: Data) {
     this.fcm.send(
       this.message(to, data, "collapse_key"),
       (err, res) => {
-        if (err) {
-          console.log(err);
-          console.log("Something has gone wrong!");
-        } else {
-          console.log("Successfully sent with response: ", res);
-        }
+         if (err) {
+           console.log("Something has gone wrong!");
+         } else {
+           console.log("Successfully sent with response: ", response);
+         }
       },
     );
   }
-
-  public sendNoticeIos(to: string, data: Data) {
-    this.fcm.send(this.message(to, data, "collapse_key"), (err, res) => {
-      if (err) {
-        console.log(err);
-        console.log("Something has gone wrong!");
-      } else {
-        console.log("Successfully sent with response: ", res);
-      }
-    });
-  }
-}
 ```
 
 ```jsx
