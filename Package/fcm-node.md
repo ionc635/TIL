@@ -50,7 +50,7 @@ var serverKey = process.env.serverKey;
 var serverKey = require('path/to/privatekey.json');
 ```
 
-멀티 클라이언트를 구성하려면 아래와 같이 작성한다.
+멀티 클라이언트를 구성하려면 아래의 방법을 사용한다.
 
 ```jsx
 const FCM = require('fcm-node')
@@ -59,10 +59,10 @@ let fcm1 = new FCM(KEY_1)
 let fcm2 = new FCM(KEY_2)
 ```
 
-NestJS에서는 어떻게 적용할 수 있는지 알아보자. 먼저 모듈을 작성한다.
+NestJS에서는 아래와 같이 작성할 수 있다. 
 
 ```jsx
-// fcm/fcm.module.ts
+# fcm/fcm.module.ts
 
 import { Module } from "@nestjs/common";
 import { FcmService } from "./fcm.service";
@@ -74,10 +74,8 @@ import { FcmService } from "./fcm.service";
 export class FcmModule {}
 ```
 
-비즈니스 로직은 아래와 같이 작성한다.
-
 ```jsx
-// fcm/fcm.service.ts
+# fcm/fcm.service.ts
 
 import { Injectable } from "@nestjs/common";
 import * as FCM from "fcm-node";
@@ -104,35 +102,22 @@ export class FcmService {
     };
   }
 
-  public sendNoticeAndroid(to: string, data: Data) {
+  public sendMessage(to: string, data: Data) {
     this.fcm.send(
       this.message(to, data, "collapse_key"),
       (err, res) => {
-        if (err) {
-          console.log(err);
-          console.log("Something has gone wrong!");
-        } else {
-          console.log("Successfully sent with response: ", res);
-        }
+         if (err) {
+           console.log("Something has gone wrong!");
+         } else {
+           console.log("Successfully sent with response: ", response);
+         }
       },
     );
   }
-
-  public sendNoticeIos(to: string, data: Data) {
-    this.fcm.send(this.message(to, data, "collapse_key"), (err, res) => {
-      if (err) {
-        console.log(err);
-        console.log("Something has gone wrong!");
-      } else {
-        console.log("Successfully sent with response: ", res);
-      }
-    });
-  }
-}
 ```
 
 ```jsx
-// fcm/fcm.interfaces.ts
+# fcm/fcm.interfaces.ts
 
 export interface Data {
   title: string;
