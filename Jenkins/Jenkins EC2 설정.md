@@ -4,7 +4,7 @@
 
 - Jenkins를 올릴 EC2와 실제 프로젝트를 올릴 서버 총 2개가 필요하다. EC2 설정 방법은 여기에서 생략한다.
 
-![Untitled](Jenkins%20EC2%20%E1%84%89%E1%85%A5%E1%86%AF%E1%84%8C%E1%85%A5%E1%86%BC%201a046304f06841dd9c8f704c8246171b/Untitled.png)
+![image](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fda43cc5a-298e-42bf-9619-5bb8a917cd0f%2FUntitled.png?table=block&id=1a046304-f068-41dd-9c8f-704c8246171b&spaceId=16f39aaf-0317-4c98-9def-554c19109c98&width=2000&userId=d99aa862-99f3-418c-9da1-b86737bc5ec8&cache=v2)
 
 ### Jenkins 설치
 
@@ -56,7 +56,7 @@ $ sudo systemctl enable jenkins.service
 $ sudo systemctl status jenkins
 ```
 
-![Untitled](Jenkins%20EC2%20%E1%84%89%E1%85%A5%E1%86%AF%E1%84%8C%E1%85%A5%E1%86%BC%201a046304f06841dd9c8f704c8246171b/Untitled%201.png)
+![image1](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F9b20b18f-ae01-44db-add8-59bd664ffb04%2FUntitled.png?table=block&id=dc30f572-6b4b-4f23-8d1f-9594a68cc1f4&spaceId=16f39aaf-0317-4c98-9def-554c19109c98&width=2000&userId=d99aa862-99f3-418c-9da1-b86737bc5ec8&cache=v2)
 
 ### 방화벽 설정
 
@@ -74,17 +74,17 @@ $ sudo ufw status // Status: inactive
 $ sudo ufw enable
 ```
 
-![Untitled](Jenkins%20EC2%20%E1%84%89%E1%85%A5%E1%86%AF%E1%84%8C%E1%85%A5%E1%86%BC%201a046304f06841dd9c8f704c8246171b/Untitled%202.png)
+![image2](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F122f8876-426d-4fee-ac89-75fc7d886366%2FUntitled.png?table=block&id=95bcbb69-9236-49e3-8eb6-745fc2d95053&spaceId=16f39aaf-0317-4c98-9def-554c19109c98&width=2000&userId=d99aa862-99f3-418c-9da1-b86737bc5ec8&cache=v2)
 
 ### Jenkins 접속
 
 - `Jenkins EC2` 인바운드 보안 그룹에 8080을 추가한다.
 
-![Untitled](Jenkins%20EC2%20%E1%84%89%E1%85%A5%E1%86%AF%E1%84%8C%E1%85%A5%E1%86%BC%201a046304f06841dd9c8f704c8246171b/Untitled%203.png)
+![image3](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fddcff1ed-0a3d-4fe9-abc3-7247953e8fac%2FUntitled.png?table=block&id=c4840394-5ab1-4a5e-8c65-836228942d4e&spaceId=16f39aaf-0317-4c98-9def-554c19109c98&width=2000&userId=d99aa862-99f3-418c-9da1-b86737bc5ec8&cache=v2)
 
 - `http://Jenkins_EC2_IP:8080`로 접속하면, 아래의 화면을 볼 수 있다.
 
-![Untitled](Jenkins%20EC2%20%E1%84%89%E1%85%A5%E1%86%AF%E1%84%8C%E1%85%A5%E1%86%BC%201a046304f06841dd9c8f704c8246171b/Untitled%204.png)
+![image4](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F1541cf54-2d3e-44b3-a8fc-4efd8d512707%2FUntitled.png?table=block&id=9030a414-2794-4587-ad19-7dd04dfb88db&spaceId=16f39aaf-0317-4c98-9def-554c19109c98&width=2000&userId=d99aa862-99f3-418c-9da1-b86737bc5ec8&cache=v2)
 
 - 아래의 명령어로 `Administrator password` 가져온 다음 입력한다.
 
