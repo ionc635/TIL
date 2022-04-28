@@ -28,5 +28,8 @@
 ## Git
 - [Submodule](https://github.com/ionc635/TIL/blob/main/Git/Submodule.md)
 
+## Jenkins
+- [Jenkins EC2 설정](https://github.com/ionc635/TIL/blob/main/Jenkins/Jenkins%20EC2%20%EC%84%A4%EC%A0%95.md)
+
 ## 참고 자료
 - [자바스크립트에서 객체 지향을 하는 게 맞나요?](https://yozm.wishket.com/magazine/detail/1396/)
