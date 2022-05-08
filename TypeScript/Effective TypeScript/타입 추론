@@ -1,0 +1,271 @@
+# 타입 추론
+
+## 아이템 19 추론 가능한 타입을 사용해 장황한 코드 방지하기
+
+타입이 추론된다면 명시적 타입 구문은 필요하지 않다. 아래와 같이 비구조화 할당문을 사용하는 것이 좋다.
+
+```jsx
+function logProduct(product: Product) {
+  const { id, name, price } = product;
+  console.log(id, name, price);
+}
+```
+
+이상적인 타입스크립트 코드는 함수/메서드 시그니처에 타입 구문을 포함하지만, 함수 내에서 생성된 지역 변수에는 타입 구문을 넣지 않는다. 보통 타입 정보가 있는 라이브러리에서, 콜백 함수의 매개변수 타입은 자동으로 추론된다.
+
+객체 리터럴을 정의할 때는 잉여 속성 체크가 동작하기 때문에 타입 추론이 될 수 있음에도 타입을 명시하기도 한다. 마찬가지로 함수의 반환에도 타입을 명시해 오류를 방지할 수 있다. 타입 추론이 가능할지라도 구현상의 오류가 함수를 호출한 곳까지 영향을 미치지 않도록 하기 위함이다. 오류의 위치를 제대로 표시해 주는 이점 외에도, 반환 타입을 명시해야 하는 이유가 2가지 있다.
+
+1. 함수에 대해 더욱 명확히 알 수 있다. 전체 타입 시그니처를 머저 작성하면 구현에 맞추어 원하는 모양을 얻게 된다.
+
+2. 명명된 타입을 사용할 수 있다.
+
+## 아이템 20 다른 타입에는 다른 변수 사용하기
+
+다른 타입에는 별도의 변수를 사용하는 것이 바람직하다. 그 이유는 아래와 같다.
+
+- 변수명을 더 구체적으로 지을 수 있다.
+- 타입 추론을 향상시키며, 타입 구문이 불필요해진다.
+- 타입이 좀 더 간결해진다.
+- let 대신 const로 선언하게 된다.
+
+## 아이템 21 타입 넓히기
+
+상수를 사용해서 변수를 초기화할 때 타입을 명시하지 않으면 타입 체커가 타입을 결정한다. 지정된 단일 값을 가지고 할당 가능한 값들의 집합을 유추하는데, 이러한 과정을 `넓히기`라고 한다.
+
+넓히기 과정을 제어할 수 있는 방법
+
+### **const**
+
+: let 대신 const로 변수를 선언하면 더 좁은 타입이 된다. 하지만 객체와 배열의 경우에는 제어할 수 없다. 객체의 경우 각 요소를 let으로 할당한 것처럼 다룬다. 같은 타입으로 재할당할 수 있고, 다른 속성을 추가할 수 없다.
+
+타입스크립트의 기본 동작을 재정의함으로써 타입 추론 강도를 직접 제어할 수 있다.
+
+1. 명시적 타입 구문 제공
+
+```jsx
+const v: { x: 1|3|5 } = {
+  x: 1,
+}; 타입 = { x: 1|3|5; }
+```
+
+2. 타입 체커에 추가적인 문맥을 제공
+
+: 함수의 매개변수로 값을 전달
+
+3. const 단언문 사용
+
+```jsx
+const v1 = {
+  x: 1,
+  y: 2,
+};  // 타입 = { x: number; y: number; }
+
+const v2 = {
+  x: 1 as const,
+  y: 2,
+}; // 타입 = { x: 1; y: number; }
+
+const v3 = {
+  x: 1,
+  y: 2,
+} as const; // 타입 = { readonly x: 1; readonly y:2; }
+```
+
+배열을 튜플 타입으로 추론할 때에도 사용할 수 있다.
+
+```jsx
+const a1 = [1, 2, 3]; // 타입 = number[]
+const a2 = [1, 2, 3] as const; // 타입 = readonly [1, 2, 3]
+```
+
+## 아이템 22 타입 좁히기
+
+타입 좁히기는 타입스크립트가 넓은 타입으로부터 좁은 타입으로 진행하는 과정을 말한다. 일반적인 예시는 null이다. 타입 체커는 일반적으로 조건문에서 타입 좁히기를 잘 해낸다.
+
+```jsx
+const el = document.getElementById('foo'); // 타입 = HTMLElement | null
+if (el) {
+  el // 타입 = HTMLElement
+  el.innerHTML = 'Party Time'.blink();
+} else {
+  el // 타입 = null
+  alert('No element #foo');
+}
+```
+
+예외를 던지거나 함수를 반환할 때, instanceof 또는 속성체크, 내장 함수로도 타입을 좁힐 수 있다.
+
+하지만 타입을 섣불리 판단하는 실수를 방지하기 위해 추가로 확인해볼 필요가 있다.
+
+```jsx
+const el = document.getElementById('foo'); // 타입 = HTMLElement | null
+if (typeof el === 'object') {
+  el; // 타입이 HTMLElement | null
+};
+```
+
+typeof null이 `object`이기 때문에 null이 제외되지 않았다. 기본형 값이 잘못되어도 비슷한 사례가 발생한다.
+
+타입을 좁히는 또 다른 일반적인 방법은 명시적 태그를 붙이는 것이다.
+
+```jsx
+interface UploadEvent { type: 'upload'; filename: string; contents: string }
+interface DownloadEvent { type: 'download; filename: string; }
+type AppEvent = UploadEvent | DownloadEvent;
+function handleEvent: AppEvent {
+  switch (e.type) {
+    case 'download';
+      e // 타입 = DownloadEvent
+      break;
+    case 'upload'
+      e // 타입 = UploadEvent
+      break;
+}
+```
+
+ 이 패턴은 태그된 유니온 또는 구별된 유니온이라고 불린다.
+
+식별을 돕기 위해 커스텀 함수를 도입할 수 있다.
+
+```jsx
+function isInputElement(el: HTMLElement): el is HTMLInputElement {
+  return 'value' in el;
+}
+
+function getElementContent(el: HTMLElement) {
+  if (isInputElement(el)) {
+    el; // 타입 = HTMLInputElement
+    return el.value;
+  }
+  el; // 타입 = HTMLElement
+  return el.textContent;
+}
+```
+
+이러한 기법은 사업자 정의 타입 가드라고 한다. 반환 타입이 el is HTMLInputElement는 함수의 반환이 true인 경우, 타입 체커에게 매개변수의 타입을 좁힐 수 있다고 알려준다.
+
+타입 가드를 사용해 배열과 객체의 타입 좁히기를 수행할 수 있다.
+
+```jsx
+const jackson5 = ['Jackie', 'Tito', 'Jermaine', 'Marlon', 'Michael'];
+const members = ['Janet', 'Michael'].map(
+  who => jackson5.find(n => n === who)
+); // 타입 = (string | undefined)[]
+```
+
+```jsx
+const members = ['Janet', 'Michael'].map(
+  who => jackson5.find(n => n === who)
+).filter(who => who !== undefined); // 타입 = (string | undefined)[]
+```
+
+```jsx
+function isDefined<T>(x: T | undefined): x is T {
+  return x !== undefined;
+} 
+
+const members = ['Janet', 'Michael'].map(
+  who => jackson5.find(n => n === who)
+).filter(isDefined); // 타입 = string[]
+```
+
+## 아이템 23 한꺼번에 객체 생성하기
+
+변수의 값은 변경될 수 있지만 일반적으로 타입은 변경되지 않는다. 이러한 특성 덕분에 일부 자바스크립트 패턴을 타입스크립트로 모델링하는 것이 쉽고, 객체를 생성할 때는 속성을 하나씩 추가하기보다는 여러 속성을 포함해 한꺼번에 생성해야 추론에 유리하다.
+
+```jsx
+const pt = {};
+px.x = 3; // ~ '{}' 형식에 'x' 속성이 없습니다.
+pt.y = 4; // ~ '{}' 형식에 'y' 속성이 없습니다.
+
+interface Point { x: number; y: number; }
+const pt: Point = {};
+  // ~~ '{}' 형식에 'Point' 형식의 x, y 속성이 없습니다.
+pt.x = 3;
+pt.y = 4;
+
+const pt = {
+  x: 3,
+  y: 4,
+}; // 정상
+
+const pt = {} as Point;
+px.x = 3;
+pt.y = 4; // 정상
+
+cont pt: Point = {
+  x: 3,
+  y: 4,
+}; 
+```
+
+객체 전개 연산자 ...를 사용하면 큰 객체를 한번에 만들 수 있다.
+
+```jsx
+const pt = { x: 3, y: 4 };
+const id = { name: 'Pythagoras' };
+const namedPoint = {};
+Object.assign(namedPoint, pt, id);
+namedPoint.name;
+       // ~~~ '{}' 형식에 'name' 속성이 없습니다.
+
+const namedPoint = { ...pt, ...id };
+namedPoint.name; // 정상
+```
+
+조건부 속성을 추가할 때는 null 또는 {}으로 객체 전개를 사용해 안전하게 추가할 수 있다.
+
+```jsx
+declare let hasMiddle: boolean;
+const firstLast = { first: 'Harry', last: 'Truman' };
+const president = { ...firstLast, ...(hasMiddle ? { middle: 'S'} : {})};
+```
+
+```jsx
+const presidet: {
+  middle?: string;
+  first: string;
+  last: string;
+}
+```
+
+전개 연산자로 한꺼번에 여러 속성을 추가할 수 있다.
+
+```jsx
+declare let hasDates: boolean;
+const nameTitle = { name: 'Khufu', title: 'Pharaoh' };
+const pharaoh = {
+  ...nameTitle,
+  ...(hasDates ? { start: -2589, end: -2566 } : {})
+};
+```
+
+```jsx
+const pharaoh: {
+  start: number;
+  end: number;
+  name: string;
+  title: string;
+} | {
+  name: string;
+  title: string;
+}
+```
+
+이 타입에서는 start를 읽을 수 없다. 이 경우는 start와 end가 항상 함께 정의된다. 이 점을 고려하면 유니온을 사용하는 게 가능한 값의 집합을 더 정확히 표현할 수 있다. 하지만 유니온보다는 선택적 필드 방식으로 다루는게 더 쉬울 수 있으며, 헴퍼 함수를 사용해 표현할 수 있다.
+
+```jsx
+function addOptional<T extends object, U extends object>(
+  a: T, b: U | null
+): T & Partial<U> {
+  return { ...a, ...b };
+}
+```
+
+```jsx
+const pharaoh = addOptional(
+  nameTitle,
+  hasDates ? { start: -2589, end: -2566 } : null
+);
+pharaoh.start // 정상
+```
