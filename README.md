@@ -40,3 +40,4 @@
 
 ## 참고 자료
 - [자바스크립트에서 객체 지향을 하는 게 맞나요?](https://yozm.wishket.com/magazine/detail/1396/)
+- [타입스크립트 타입 레벨 프로그래밍](https://velog.io/@gomjellie/You-dont-know-type)
