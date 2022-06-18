@@ -8,6 +8,7 @@
   - [타입스크립트의 타입 시스템](https://github.com/ionc635/TIL/blob/main/TypeScript/Effective%20TypeScript/%ED%83%80%EC%9E%85%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8%EC%9D%98%20%ED%83%80%EC%9E%85%20%EC%8B%9C%EC%8A%A4%ED%85%9C.md)
   - [타입 추론](https://github.com/ionc635/TIL/blob/main/TypeScript/Effective%20TypeScript/%ED%83%80%EC%9E%85%20%EC%B6%94%EB%A1%A0.md)
   - [타입 설계](https://github.com/ionc635/TIL/blob/main/TypeScript/Effective%20TypeScript/%ED%83%80%EC%9E%85%20%EC%84%A4%EA%B3%84.md)
+  - [any 다루기](https://github.com/ionc635/TIL/blob/main/TypeScript/Effective%20TypeScript/any%20%EB%8B%A4%EB%A3%A8%EA%B8%B0.md)
 
 ### type-challenges
   - [MyPick](https://github.com/ionc635/TIL/blob/main/TypeScript/type-challenges/MyPick.md)
