@@ -104,7 +104,7 @@ ALTER TABLE 테이블명 DROP INDEX 인덱스명;**
 
 ## 옵티마이저 구조
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/f1b8340a-6d78-4e9f-a4e1-5724265768b3/Untitled.png)
+![Untitled](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/f1b8340a-6d78-4e9f-a4e1-5724265768b3/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220622%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220622T115249Z&X-Amz-Expires=86400&X-Amz-Signature=6ea7739342ca1ce22ab1d2caf69e5aab3a8cfe2b924fcb1ab3fbca5c2f40b759&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22&x-id=GetObject)
 
 MySQL 옵티마이저는 비용 기반으로 어떤 실행 계획으로 쿼리를 실행 했을 때 비용이 얼마나 발생하는지를 계산해 비용이 가장 적은 것을 택한다. 어디까지나 추정 값으로 정확한 비용은 실행 전까지 정확히 알 수 없다.
 
