@@ -59,6 +59,9 @@
 ## Jenkins
 - [Jenkins EC2 설정](https://github.com/ionc635/TIL/blob/main/Jenkins/Jenkins%20EC2%20%EC%84%A4%EC%A0%95.md)
 
+## Essay
+- [커뮤니티 장학 프로그램 with NEAR Hacker House 후기](https://github.com/ionc635/TIL/blob/main/Essay/%EC%BB%A4%EB%AE%A4%EB%8B%88%ED%8B%B0%20%EC%9E%A5%ED%95%99%20%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%A8%20with%20NEAR%20Hacker%20House%20%ED%9B%84%EA%B8%B0.md)
+
 ## 참고 자료
 - [자바스크립트에서 객체 지향을 하는 게 맞나요?](https://yozm.wishket.com/magazine/detail/1396/)
 - [타입스크립트 타입 레벨 프로그래밍](https://velog.io/@gomjellie/You-dont-know-type)
