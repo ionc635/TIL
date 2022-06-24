@@ -8,7 +8,7 @@ I filled out the application honestly and was fortunately selected for the San F
 
 If you are a developer, you may have a desire to work in a foreign country (especially Silicon Valley) at least once. I dream of working in Silicon Valley someday, too. But the word 'someday' was always attached. I’m well aware that the idea of the distant future is still there, and I’m not dreaming of it in detail.
 
-![Untitled](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/365abe37-8a00-40e5-8b1b-faa7bbe6c9dd/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220622%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220622T145821Z&X-Amz-Expires=86400&X-Amz-Signature=a870e2cb740a430596d9dbac954a7d9213e2daf174f60fc0e64c85826312307d&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22&x-id=GetObject)
+![Untitled](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F365abe37-8a00-40e5-8b1b-faa7bbe6c9dd%2FUntitled.png?table=block&id=eec1c01e-a905-4117-a006-fc40917487b2&spaceId=16f39aaf-0317-4c98-9def-554c19109c98&width=2000&userId=d99aa862-99f3-418c-9da1-b86737bc5ec8&cache=v2)
 
 With this opportunity, my still fuzzy goal has become a little clearer. Previously, if the destination was trapped in a fog, it feels like the fog has lifted a little. For me, the fact that I was active globally for the first time as a developer was of great significance, and I was able to gain confidence through my challenges. However, on the contrary, I met a big wall called 'English' and it seemed like the fog was over me again.
 
