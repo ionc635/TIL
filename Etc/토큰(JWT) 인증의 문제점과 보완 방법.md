@@ -7,6 +7,10 @@
 3. 보완책
 
 ### 1. 현재 JWT 전략
+|이름|저장 방식|유효기간|취약 공격|
+|-------|---|---|---|
+|액세스 토큰|LocalStorage|30분|XSS|
+|리프래쉬 토큰|Cookie|14일|CSRF|
 
 **내부 검증 로직:** 
 
@@ -24,10 +28,10 @@
 
 아래는 잘 알려진 XSS 공격 기법이다.
 
-- 스크립트 태그 활용: <script>alert('XSS');</script>
-- 자바스크립트 링크 활용: <a href="javascript:alert('XSS')">XSS</a>
-- 이벤트 속성 활용: <img src="#" onerror="alert('XSS')">
-- <a href="&#x6A;&#x61;&#x76;&#x61;&#x73;&#xA;&#x63;&#x72;&#x69;&#x70;&#x74;&#xA;&#x3A;&#xA;&#x61;&#x6C;&#x65;&#x72;&#x74;&#xA;&#x28;&#x27;&#x58;&#x53;&#x53;&#x27;&#x29;">XSS</a>
+- 스크립트 태그 활용: `<script>alert('XSS');</script>`
+- 자바스크립트 링크 활용: `<a href="javascript:alert('XSS')">XSS</a>`
+- 이벤트 속성 활용: `<img src="#" onerror="alert('XSS')">`
+- `<a href="&#x6A;&#x61;&#x76;&#x61;&#x73;&#xA;&#x63;&#x72;&#x69;&#x70;&#x74;&#xA;&#x3A;&#xA;&#x61;&#x6C;&#x65;&#x72;&#x74;&#xA;&#x28;&#x27;&#x58;&#x53;&#x53;&#x27;&#x29;">XSS</a>`
 
 위와 같이 내용 또는 스크립트를 난독화해 보안을 뚫으려는 시도가 계속되고 있다.
 
