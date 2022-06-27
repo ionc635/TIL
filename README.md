@@ -53,6 +53,9 @@
 ## Jenkins
 - [Jenkins EC2 설정](https://github.com/ionc635/TIL/blob/main/Jenkins/Jenkins%20EC2%20%EC%84%A4%EC%A0%95.md)
 
+## Etc
+- [토큰(JWT) 인증의 문제점과 보완 방법](https://github.com/ionc635/TIL/blob/main/Etc/%ED%86%A0%ED%81%B0(JWT)%20%EC%9D%B8%EC%A6%9D%EC%9D%98%20%EB%AC%B8%EC%A0%9C%EC%A0%90%EA%B3%BC%20%EB%B3%B4%EC%99%84%20%EB%B0%A9%EB%B2%95.md)
+
 ## Essay
 - [커뮤니티 장학 프로그램 with NEAR Hacker House 후기](https://github.com/ionc635/TIL/blob/main/Essay/%EC%BB%A4%EB%AE%A4%EB%8B%88%ED%8B%B0%20%EC%9E%A5%ED%95%99%20%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%A8%20with%20NEAR%20Hacker%20House%20%ED%9B%84%EA%B8%B0.md)
 
