@@ -35,6 +35,9 @@
  - [암호학](https://github.com/ionc635/TIL/blob/main/Blockchain/Mastering%20Ethereum/%EC%95%94%ED%98%B8%ED%95%99.md)
  - [지갑](https://github.com/ionc635/TIL/blob/main/Blockchain/Mastering%20Ethereum/%EC%A7%80%EA%B0%91.md)
 
+### Solidity
+ - [Variables](https://github.com/ionc635/TIL/blob/main/Blockchain/Solidity/Variables.md)
+
 ## RDBMS
   - [인덱스(index)](https://github.com/ionc635/TIL/blob/main/RDBMS/Index(%EC%9D%B8%EB%8D%B1%EC%8A%A4).md)
 
