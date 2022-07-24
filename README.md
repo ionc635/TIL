@@ -37,7 +37,8 @@
 
 ### Solidity
  - [Variables](https://github.com/ionc635/TIL/blob/main/Blockchain/Solidity/Variables.md)
- - [Address & Global object](https://github.com/ionc635/TIL/blob/main/Blockchain/Solidity/Address%20%26%20Global%20msg%20object.md) 
+ - [Address & Global object](https://github.com/ionc635/TIL/blob/main/Blockchain/Solidity/Address%20%26%20Global%20msg%20object.md)
+ - [KIP17](https://github.com/ionc635/TIL/blob/main/Blockchain/Solidity/KIP17.md)
 
 ## RDBMS
   - [인덱스(index)](https://github.com/ionc635/TIL/blob/main/RDBMS/Index(%EC%9D%B8%EB%8D%B1%EC%8A%A4).md)
